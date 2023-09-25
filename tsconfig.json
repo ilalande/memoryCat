@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    /*Types for CSS module in vite from https://dev.to/activeguild/i-made-a-typescript-plugin-for-css-modules-that-can-be-used-with-vite-3ofg*/
+    "plugins": [{ "name": "ts-css-modules-vite-plugin" }],
+
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["./src/*"],
+      "@components/*": ["src/components/*"],
+      "@components": ["src/components"],
+      "@pages/*": ["src/pages/*"],
+      "@pages": ["src/pages"],
+      "@styles/*": ["src/styles/*"],
+      "@styles": ["src/styles"],
+      "@assets/*": ["src/assets/*"],
+      "@public": ["public"],
+      "@custom-types/*": ["src/custom-types/*"],
+      "@custom-types": ["src/custom-types"],
+      "@utils/*": ["src/utils/*"],
+      "@utils": ["src/utils"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
