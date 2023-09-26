@@ -1,15 +1,24 @@
+import { useEffect } from 'react';
+
 import styles from '../styles/modules/card.module.css';
-import { Link } from 'react-router-dom';
 import { cardType } from '@custom-types/content-types';
 
 interface cardPropsType {
-  card: cardType;
+  card: cardType | null;
 }
 export default function Card({ card }: cardPropsType): JSX.Element {
+  useEffect(() => {
+    console.log(card);
+  }, []);
   return (
-    <div className={styles.card}>
-      <h2>{card.title}</h2>
-      <p>{card.content}</p>
-    </div>
+    <>
+      {card ? (
+        <div className={styles.card}>
+          <img src={card.url} width={card.width} />
+        </div>
+      ) : (
+        <></>
+      )}
+    </>
   );
 }

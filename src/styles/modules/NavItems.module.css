@@ -14,7 +14,6 @@
   max-width: 30px;
 }
 .navItems a:hover {
-  border-bottom: 2px solid var(--hover-color);
   opacity: 90%;
   cursor: pointer;
 }
@@ -24,5 +23,6 @@
   display: flex;
 }
 .navItems a.active {
-  border-bottom: 2px solid var(--dark-color);
+  font-weight: bold;
+  opacity: 90%;
 }
