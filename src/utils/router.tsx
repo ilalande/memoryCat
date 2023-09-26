@@ -1,7 +1,11 @@
-import CardDetail from '@components/CardDetail';
 import ErrorPage from '@pages/ErrorPage';
 import Home from '@pages/Home';
-import StaticPage from '@pages/StaticPage';
+import AccessibilityPage from 'src/pages/AccessiblityPage';
+import Game from 'src/pages/Game';
+import LegalPage from 'src/pages/LegalPage';
+import imgSettings from '@assets/images/settings.svg';
+import imgRewind from '@assets/images/rotate-cw.svg';
+import Settings from 'src/pages/Settings';
 
 export const routes = [
   {
@@ -11,23 +15,32 @@ export const routes = [
     name: 'home',
     text: 'Accueil',
     catNav: 'header',
-    title: 'Vite Typescript React BoilerPlate - Accueil',
+    title: 'Memory Cat - Accueil',
+    img: imgRewind,
   },
   {
-    path: 'staticpage',
-    element: <StaticPage />,
+    path: 'game',
+    element: <Game />,
+    name: 'game',
+    text: 'Jouer',
     catNav: 'header',
-    text: 'Page statique',
+    title: 'Memory Cat - jouer',
   },
   {
-    path: 'card/:cardId',
-    element: <CardDetail />,
-    text: "Détail d'une carte",
+    path: 'settings',
+    element: <Settings />,
+    name: 'settings',
+    text: 'Réglages',
+    catNav: 'header',
+    title: 'réglages',
+    img: imgSettings,
   },
+
   {
     name: 'legal',
     text: 'Mentions légales',
     path: 'mentions-legales',
+    element: <LegalPage />,
     catNav: 'footer',
   },
 
@@ -35,6 +48,7 @@ export const routes = [
     name: 'acessibility',
     text: 'Accessibilité : partiellement conforme',
     path: 'accessibilite',
+    element: <AccessibilityPage />,
     catNav: 'footer',
   },
 ];

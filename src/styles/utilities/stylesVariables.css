@@ -1,6 +1,7 @@
 :root {
   --font-weight-general: 400;
-  --font-general: 'Outfit', Arial, sans-serif;
+  --font-general: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
   --bground-color: hsl(177, 51%, 93%, 0.9);
   --dark-color: hsl(247, 31%, 20%);

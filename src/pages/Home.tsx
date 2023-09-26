@@ -1,15 +1,15 @@
 import styles from '@styles/modules/Home.module.css';
-import { Link } from 'react-router-dom';
-import Gallery from '../components/Gallery';
+import cat from '@assets/images/cat.png';
 
 function Home() {
   return (
     <div className={styles.home}>
-      <h1>Vite Typescript React BoilerPlate - Accueil</h1>
-      <p>
-        <Link to={'/staticpage'}> Link to static page</Link>
-      </p>
-      <Gallery />
+      <div className={styles.image}>
+        <img src={cat} />
+      </div>
+      <div className={styles.playButton}>
+        <a href='/game'>Play</a>
+      </div>
     </div>
   );
 }
