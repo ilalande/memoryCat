@@ -3,15 +3,18 @@
 /* Style form App.css and GeneralLAyout */
 
 body {
-  min-height: 100vh;
+  height: 96vh;
   width: 100%;
-  border: 2px solid red;
+
   background-color: var(--bground-color);
   font-family: var(--font-general);
 }
 
+main {
+  margin: 0 auto;
+}
+
 .section {
-  border: 2px solid green;
   margin: 0 auto;
   max-width: 62.5rem;
   padding: 0 1.5rem;

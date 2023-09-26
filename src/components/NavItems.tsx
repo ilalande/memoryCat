@@ -17,7 +17,8 @@ const NavItems = ({ cat }: { cat: string }) => {
                 }
                 title={item.title}
               >
-                {item.img && <img src={item.img} title={item.title} />}{' '}
+                {item.img ? <img src={item.img} title={item.title} /> : <></>}{' '}
+                {item.text ? <span>{item.text}</span> : <></>}
               </NavLink>
             </li>
           );

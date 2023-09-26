@@ -8,9 +8,7 @@ interface cardPropsType {
 export default function Card({ card }: cardPropsType): JSX.Element {
   return (
     <div className={styles.card}>
-      <h2>
-        <Link to={`/card/${card.id}`}>{card.title}</Link>
-      </h2>
+      <h2>{card.title}</h2>
       <p>{card.content}</p>
     </div>
   );

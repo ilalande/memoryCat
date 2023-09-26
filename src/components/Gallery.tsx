@@ -12,7 +12,6 @@ const cards: cardType[] = [
 export default function Gallery(): JSX.Element {
   return (
     <>
-      <p>Here is my galley calling for cards</p>
       <div className={styles.gallery}>
         {cards.map((card) => {
           return (

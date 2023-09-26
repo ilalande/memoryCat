@@ -1,7 +1,11 @@
 export interface routesType {
+  element?: JSX.Element;
+  errorElement?: JSX.Element;
   name: string;
-  text: string;
+  text?: string;
   path: string;
-  id: string;
-  image?: string;
+
+  img?: string;
+  title?: string;
+  catNav?: string;
 }

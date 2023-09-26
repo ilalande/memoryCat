@@ -5,37 +5,47 @@ import Game from 'src/pages/Game';
 import LegalPage from 'src/pages/LegalPage';
 import imgSettings from '@assets/images/settings.svg';
 import imgRewind from '@assets/images/rotate-cw.svg';
+import imgCat from '@assets/images/cat.png';
+import imgPlay from '@assets/images/play.svg';
 import Settings from 'src/pages/Settings';
-
-export const routes = [
+import { routesType } from '@custom-types/routes';
+export const routes: routesType[] = [
   {
-    path: '',
-    element: <Home />,
-    errorElement: <ErrorPage />,
-    name: 'home',
-    text: 'Accueil',
+    path: 'settings',
+    element: <Settings />,
+    name: 'settings',
+
     catNav: 'header',
-    title: 'Memory Cat - Accueil',
-    img: imgRewind,
+    title: 'réglages',
+    img: imgSettings,
   },
   {
     path: 'game',
     element: <Game />,
     name: 'game',
-    text: 'Jouer',
+    text: 'Play',
+    img: imgPlay,
     catNav: 'header',
-    title: 'Memory Cat - jouer',
-  },
-  {
-    path: 'settings',
-    element: <Settings />,
-    name: 'settings',
-    text: 'Réglages',
-    catNav: 'header',
-    title: 'réglages',
-    img: imgSettings,
+    title: 'Jouer à Memory Cat - play',
   },
 
+  {
+    path: '',
+    element: <Home />,
+    errorElement: <ErrorPage />,
+    name: 'home',
+
+    catNav: 'header',
+    title: 'Memory Cat - Accueil',
+    img: imgRewind,
+  },
+  {
+    name: 'memoryCatHome',
+    text: 'Memory Cat',
+    path: '',
+    catNav: 'footer',
+    img: imgCat,
+  },
   {
     name: 'legal',
     text: 'Mentions légales',

@@ -5,6 +5,7 @@
 .listWrapper {
   display: flex;
   align-items: baseline;
+  justify-content: center;
   width: 100%;
 }
 
@@ -18,6 +19,8 @@
   margin: 0 auto;
   padding-bottom: 0.5rem;
   font-size: 0.8rem;
+
+  text-align: center;
 }
 
 @media screen and (min-width: 576px) {
@@ -25,7 +28,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    margin: 0;
+    margin: 0 auto;
   }
   .footer li {
     font-size: 1rem;

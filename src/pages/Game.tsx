@@ -5,10 +5,8 @@ import Gallery from '../components/Gallery';
 function Game() {
   return (
     <div className={styles.home}>
-      <h1>Memory Cat</h1>
-      <p>
-        <Link to={'/staticpage'}> Link to static page</Link>
-      </p>
+      <h1 className='sr-only'>Memory Cat</h1>
+
       <Gallery />
     </div>
   );
