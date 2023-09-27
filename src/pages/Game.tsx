@@ -13,24 +13,20 @@ function Game() {
     const data = await fetchApi();
 
     if (data) {
-      const catArray: cardType[] = [...data];
-      for (const item of data) {
-        catArray.push({
-          id: nanoid(),
-          url: item.url,
-          heigth: item.heigth,
-          width: item.width,
-        });
+      const catArray: cardType[] = [];
+      const l = data.length;
+      for (let j = 0; j < 2; j++) {
+        for (let i = 0; i < l; i++) {
+          const { url, heigth, width } = data[i];
+          catArray.push({
+            id: nanoid(),
+            url: url,
+            heigth: heigth,
+            width: width,
+            title: `Cat ${i}`,
+          });
+        }
       }
-      for (const item of data) {
-        catArray.push({
-          id: nanoid(),
-          url: item.url,
-          heigth: item.heigth,
-          width: item.width,
-        });
-      }
-
       setCardArr(shuffleCards(catArray));
     }
   };

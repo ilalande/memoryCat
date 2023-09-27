@@ -13,7 +13,7 @@ export const shuffleCards = (arr: cardType[]) => {
   const nArr = [...arr];
   const l = nArr.length;
 
-  for (let i = 1; i < 50; i++) {
+  for (let i = 1; i < 150; i++) {
     const indexStart = Math.round(Math.random() * (l - 1));
     const indexEnd = Math.round(Math.random() * (l - 1));
     if (indexStart !== indexEnd) swapArr(nArr, indexStart, indexEnd);

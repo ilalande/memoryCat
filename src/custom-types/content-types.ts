@@ -3,6 +3,7 @@ export interface cardType {
   url?: string;
   heigth?: number;
   width?: number;
+  title: string;
 }
 
 export interface cardApiType {

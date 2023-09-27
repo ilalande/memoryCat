@@ -8,16 +8,13 @@ export default function Gallery({
 }: {
   cardArr: cardType[] | null;
 }): JSX.Element {
-  useEffect(() => {
-    console.log(cardArr);
-  }, []);
   return (
     <>
       {cardArr ? (
         <div className={styles.gallery}>
           {cardArr.map((card) => {
             return (
-              <div key={card.id}>
+              <div className={styles.galleryCards} key={card.id}>
                 <Card card={card} />
               </div>
             );
