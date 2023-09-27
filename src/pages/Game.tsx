@@ -8,6 +8,8 @@ import { cardType } from '@custom-types/content-types';
 
 function Game() {
   const [cardArr, setCardArr] = useState<cardType[] | null>([]);
+  const [openedCards, setOpenedCards] = useState<number[]>([]);
+  const [clearedCards, setClearedCards] = useState<number[]>([]);
 
   const getCatArray = async () => {
     const data = await fetchApi();
@@ -32,6 +34,26 @@ function Game() {
   };
 
   useEffect(() => {
+    console.log('opened cards ' + openedCards);
+  }, [openedCards]);
+  useEffect(() => {
+    console.log('cleard cards ' + clearedCards);
+  }, [clearedCards]);
+  const handleClick = (index: number) => {
+    if (openedCards.length === 0) {
+      setOpenedCards([index]);
+    } else if (openedCards.length === 1) {
+      const firstIndex = openedCards[0];
+      setOpenedCards([...openedCards, index]);
+      setTimeout(() => {
+        if (cardArr && cardArr[firstIndex].title === cardArr[index].title)
+          setClearedCards([...clearedCards, firstIndex, index]);
+        setOpenedCards([]);
+      }, 2000);
+    }
+  };
+
+  useEffect(() => {
     try {
       getCatArray();
     } catch (error) {
@@ -47,7 +69,12 @@ function Game() {
     <div className={styles.home}>
       <h1 className='sr-only'>Memory Cat</h1>
 
-      <Gallery cardArr={cardArr} />
+      <Gallery
+        cardArr={cardArr}
+        openedCards={openedCards}
+        clearedCards={clearedCards}
+        handleClick={handleClick}
+      />
     </div>
   );
 }
