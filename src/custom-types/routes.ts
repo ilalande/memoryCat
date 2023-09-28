@@ -1,4 +1,5 @@
 export interface routesType {
+  id: string;
   element?: JSX.Element;
   errorElement?: JSX.Element;
   name: string;

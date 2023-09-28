@@ -1,6 +1,4 @@
-.footer {
-  margin-top: auto;
-}
+/* Position of footer is defined in app.css file */
 
 .listWrapper {
   display: flex;
@@ -13,16 +11,19 @@
   width: fit-content;
   display: block;
   margin: 0 auto;
-  padding: 2rem 0 1rem 0;
+  padding: 0;
 }
 .footer li {
   margin: 0 auto;
-  padding-bottom: 0.5rem;
+  padding: 0.3rem;
   font-size: 0.8rem;
-
   text-align: center;
 }
 
+.footer li a {
+  display: flex;
+  align-items: center;
+}
 @media screen and (min-width: 576px) {
   .footer ul {
     display: flex;

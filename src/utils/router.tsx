@@ -11,13 +11,21 @@ import Settings from 'src/pages/Settings';
 import { routesType } from '@custom-types/routes';
 export const routes: routesType[] = [
   {
+    path: '',
+    element: <Home />,
+    errorElement: <ErrorPage />,
+    name: 'home',
+    title: 'Memory Cat - Accueil',
+    id: 'ROUTE001',
+  },
+  {
     path: 'settings',
     element: <Settings />,
     name: 'settings',
-
     catNav: 'header',
     title: 'réglages',
     img: imgSettings,
+    id: 'ROUTE002',
   },
   {
     path: 'game',
@@ -27,24 +35,25 @@ export const routes: routesType[] = [
     img: imgPlay,
     catNav: 'header',
     title: 'Jouer à Memory Cat - play',
+    id: 'ROUTE003',
   },
 
-  {
-    path: '',
-    element: <Home />,
-    errorElement: <ErrorPage />,
-    name: 'home',
-
-    catNav: 'header',
-    title: 'Memory Cat - Accueil',
-    img: imgRewind,
-  },
+  // {
+  //   path: 'game',
+  //   element: <Game />,
+  //   name: 'home',
+  //   catNav: 'header',
+  //   title: 'Recommencer',
+  //   img: imgRewind,
+  //   id: 'ROUTE004',
+  // },
   {
     name: 'memoryCatHome',
     text: 'Memory Cat',
     path: '',
     catNav: 'footer',
     img: imgCat,
+    id: 'ROUTE005',
   },
   {
     name: 'legal',
@@ -52,6 +61,7 @@ export const routes: routesType[] = [
     path: 'mentions-legales',
     element: <LegalPage />,
     catNav: 'footer',
+    id: 'ROUTE006',
   },
 
   {
@@ -60,5 +70,6 @@ export const routes: routesType[] = [
     path: 'accessibilite',
     element: <AccessibilityPage />,
     catNav: 'footer',
+    id: 'ROUTE007',
   },
 ];

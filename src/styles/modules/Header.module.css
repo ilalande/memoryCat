@@ -11,6 +11,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-
   width: 100%;
 }
+/* Position of header is defined in app.css file */

@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
 }
 .homeWrapper > * {
   margin: auto;
@@ -31,6 +30,13 @@
 }
 .playButton a:hover {
   background-color: var(--hover-button-color);
+}
+
+.counts {
+  padding: 0.3rem 0.8rem;
+  font-weight: 800;
+  border: 2px solid var(--dark-color);
+  border-radius: 50%;
 }
 
 @media screen and (min-width: 576px) {

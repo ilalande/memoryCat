@@ -9,7 +9,7 @@ const NavItems = ({ cat }: { cat: string }) => {
         .filter((item) => item.catNav === cat)
         .map((item) => {
           return (
-            <li key={item.path}>
+            <li key={item.id}>
               <NavLink
                 to={`/${item.path}`}
                 className={({ isActive }) =>

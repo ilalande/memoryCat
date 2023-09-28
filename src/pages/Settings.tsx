@@ -1,4 +1,4 @@
-import styles from '@styles/modules/Home.module.css';
+import styles from '@styles/modules/Pages.module.css';
 
 function Settings() {
   return (

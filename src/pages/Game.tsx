@@ -1,15 +1,28 @@
 import { nanoid } from 'nanoid';
 import { useEffect, useState } from 'react';
-import styles from '@styles/modules/Home.module.css';
+import styles from '@styles/modules/Pages.module.css';
 import { fetchApi } from 'src/utils/request';
 import { shuffleCards } from 'src/utils/functions';
-import Gallery from '../components/Gallery';
+import Gallery from '@components/Gallery';
+import Modal from 'src/components/Modal';
 import { cardType } from '@custom-types/content-types';
 
 function Game() {
   const [cardArr, setCardArr] = useState<cardType[] | null>([]);
   const [openedCards, setOpenedCards] = useState<number[]>([]);
   const [clearedCards, setClearedCards] = useState<number[]>([]);
+  const [count, setCount] = useState(0);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  useEffect(() => {
+    console.log('modal visible :' + isModalVisible);
+    console.log('clearedCards :' + clearedCards);
+
+    if (count > 0 && clearedCards.length === cardArr?.length) {
+      console.log('yes modal visible ' + isModalVisible);
+      setIsModalVisible(true);
+    }
+  }, [clearedCards]);
 
   const getCatArray = async () => {
     const data = await fetchApi();
@@ -33,23 +46,31 @@ function Game() {
     }
   };
 
-  useEffect(() => {
-    console.log('opened cards ' + openedCards);
-  }, [openedCards]);
-  useEffect(() => {
-    console.log('cleard cards ' + clearedCards);
-  }, [clearedCards]);
   const handleClick = (index: number) => {
     if (openedCards.length === 0) {
       setOpenedCards([index]);
     } else if (openedCards.length === 1) {
+      setCount((prev) => {
+        return prev + 1;
+      });
       const firstIndex = openedCards[0];
       setOpenedCards([...openedCards, index]);
-      setTimeout(() => {
-        if (cardArr && cardArr[firstIndex].title === cardArr[index].title)
-          setClearedCards([...clearedCards, firstIndex, index]);
+      if (
+        cardArr &&
+        cardArr[firstIndex].title !== cardArr[index].title &&
+        firstIndex !== index
+      ) {
+        setTimeout(() => {
+          setOpenedCards([]);
+        }, 2000);
+      } else if (
+        cardArr &&
+        cardArr[firstIndex].title === cardArr[index].title &&
+        firstIndex !== index
+      ) {
+        setClearedCards([...clearedCards, firstIndex, index]);
         setOpenedCards([]);
-      }, 2000);
+      }
     }
   };
 
@@ -61,20 +82,25 @@ function Game() {
     }
   }, []);
 
-  useEffect(() => {
-    console.log(cardArr);
-  }, [cardArr]);
+  // useEffect(() => {
+  //   console.log(cardArr);
+  // }, [cardArr]);
 
   return (
     <div className={styles.home}>
       <h1 className='sr-only'>Memory Cat</h1>
-
+      <div className={styles.counts}>{count}</div>
       <Gallery
         cardArr={cardArr}
         openedCards={openedCards}
         clearedCards={clearedCards}
         handleClick={handleClick}
       />
+      {isModalVisible && (
+        <Modal onModalClose={() => setIsModalVisible(false)}>
+          <p>Bravo ! vous avez gagné en {count} coups</p>
+        </Modal>
+      )}
     </div>
   );
 }

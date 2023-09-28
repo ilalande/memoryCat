@@ -17,23 +17,18 @@ export default function Card({
   imageInactive,
   handleClick,
 }: cardPropsType): JSX.Element {
-  useEffect(() => {
-    console.log(card);
-    console.log(index);
-    console.log(imageVisible);
-  }, [imageVisible]);
+  // useEffect(() => {
+  //   console.log(card);
+  //   console.log(index);
+  //   console.log(imageVisible);
+  // }, [imageVisible]);
 
   return (
     <div className={styles.card}>
-      {card && imageInactive ? (
+      {(card && imageInactive) || (card && imageVisible) ? (
         <div className={styles.cardImage}>
           <img src={card.url} width={card.width} />
         </div>
-      ) : card && imageVisible ? (
-        <button className={styles.cardImage} onClick={() => handleClick(index)}>
-          <img src={card.url} width={card.width} />
-          <p> {card.title}</p>
-        </button>
       ) : card ? (
         <button className={styles.cardImage} onClick={() => handleClick(index)}>
           <span></span> <p> {card.title}</p>

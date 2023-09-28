@@ -3,21 +3,29 @@
 /* Style form App.css and GeneralLAyout */
 
 body {
-  height: 96vh;
+  height: 100%;
   width: 100%;
-
   background-color: var(--bground-color);
   font-family: var(--font-general);
 }
 
 main {
+  min-height: 6%;
   margin: 0 auto;
+  flex: 1;
 }
 
+.mainWrapper {
+  width: 100%;
+  display: flex;
+  border: 1px solid red;
+  flex-direction: column;
+}
 .section {
   margin: 0 auto;
   max-width: 62.5rem;
   padding: 0 1.5rem;
+  border: 1px solid green;
 }
 
 .sr-only {
