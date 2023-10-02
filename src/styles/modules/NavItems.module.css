@@ -13,7 +13,7 @@
   max-width: 30px;
 }
 .navItems a:hover {
-  opacity: 90%;
+  opacity: 80%;
   cursor: pointer;
 }
 
@@ -22,6 +22,5 @@
   display: flex;
 }
 .navItems a.active {
-  font-weight: bold;
-  opacity: 90%;
+  opacity: 80%;
 }

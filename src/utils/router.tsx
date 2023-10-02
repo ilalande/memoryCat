@@ -4,11 +4,11 @@ import AccessibilityPage from 'src/pages/AccessiblityPage';
 import Game from 'src/pages/Game';
 import LegalPage from 'src/pages/LegalPage';
 import imgSettings from '@assets/images/settings.svg';
-import imgRewind from '@assets/images/rotate-cw.svg';
 import imgCat from '@assets/images/cat.png';
 import imgPlay from '@assets/images/play.svg';
 import Settings from 'src/pages/Settings';
 import { routesType } from '@custom-types/routes';
+import SiteMapPage from 'src/pages/SiteMapPage';
 export const routes: routesType[] = [
   {
     path: '',
@@ -69,6 +69,14 @@ export const routes: routesType[] = [
     text: 'Accessibilité : partiellement conforme',
     path: 'accessibilite',
     element: <AccessibilityPage />,
+    catNav: 'footer',
+    id: 'ROUTE007',
+  },
+  {
+    name: 'siteMap',
+    text: 'Plan du site',
+    path: 'plan',
+    element: <SiteMapPage />,
     catNav: 'footer',
     id: 'ROUTE007',
   },

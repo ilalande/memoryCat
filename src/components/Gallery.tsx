@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import styles from '../styles/modules/gallery.module.css';
 import Card from './Card';
 import { cardType } from '@custom-types/content-types';
