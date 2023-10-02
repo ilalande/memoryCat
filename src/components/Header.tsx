@@ -7,7 +7,6 @@ export default function Header(): JSX.Element {
       <nav role='navigation' aria-label='navigation principale'>
         <NavItems cat='header' />
       </nav>
-      Header
     </header>
   );
 }

@@ -9,7 +9,7 @@ const NavItems = ({ cat }: { cat: string }) => {
         .filter((item) => item.catNav === cat)
         .map((item) => {
           return (
-            <li key={item.path}>
+            <li key={item.id}>
               <NavLink
                 to={`/${item.path}`}
                 className={({ isActive }) =>
@@ -17,7 +17,8 @@ const NavItems = ({ cat }: { cat: string }) => {
                 }
                 title={item.title}
               >
-                {item.text}{' '}
+                {item.img ? <img src={item.img} title={item.title} /> : <></>}{' '}
+                {item.text ? <span>{item.text}</span> : <></>}
               </NavLink>
             </li>
           );

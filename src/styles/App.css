@@ -3,13 +3,28 @@
 /* Style form App.css and GeneralLAyout */
 
 body {
-  min-height: 100vh;
   width: 100%;
-  border: 2px solid red;
+  background-color: var(--bground-color);
+  font-family: var(--font-general);
+}
+
+main {
+  margin: auto;
+  min-height: 88vh;
+}
+header {
+  min-height: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  min-height: 5vh;
+  display: flex;
+  align-items: center;
 }
 
 .section {
-  border: 2px solid green;
   margin: 0 auto;
   max-width: 62.5rem;
   padding: 0 1.5rem;

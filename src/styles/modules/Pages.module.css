@@ -1,0 +1,46 @@
+.home {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.homeWrapper > * {
+  margin: auto;
+}
+
+.home h1 {
+  text-align: center;
+}
+
+.playButton {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.playButton a {
+  padding: 0.5rem 2rem;
+  background-color: var(--yellow-color);
+  border-radius: var(--border-radius);
+  color: var(--dark-color);
+  font-weight: 800;
+
+  border: 2px solid var(--dark-color);
+}
+.playButton a:hover {
+  background-color: var(--hover-button-color);
+}
+
+.counts {
+  padding: 0.3rem 0.8rem;
+  font-weight: 800;
+  border: 2px solid var(--dark-color);
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 576px) {
+  .image {
+    max-width: 70%;
+  }
+}

@@ -1,6 +1,14 @@
 export interface cardType {
-  id: number;
+  id: string;
+  url?: string;
+  heigth?: number;
+  width?: number;
   title: string;
-  content: string;
-  image?: string;
+}
+
+export interface cardApiType {
+  id: string;
+  url: string;
+  heigth: number;
+  width: number;
 }

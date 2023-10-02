@@ -2,26 +2,49 @@ import styles from '../styles/modules/gallery.module.css';
 import Card from './Card';
 import { cardType } from '@custom-types/content-types';
 
-const cards: cardType[] = [
-  { id: 1, title: 'card1', content: 'content of card 1' },
-  { id: 2, title: 'card2', content: 'content of card 2' },
-  { id: 3, title: 'card3', content: 'content of card 3' },
-  { id: 4, title: 'card4', content: 'content of card 4' },
-];
+interface galleryPropsType {
+  cardArr: cardType[] | null;
+  openedCards: number[];
+  clearedCards: number[];
+  handleClick: (index: number) => void;
+}
 
-export default function Gallery(): JSX.Element {
+export default function Gallery({
+  cardArr,
+  openedCards,
+  clearedCards,
+  handleClick,
+}: galleryPropsType): JSX.Element {
+  const checkIfImageVisible = (index: number) => {
+    if (clearedCards.includes(index) || openedCards.includes(index))
+      return true;
+    else return false;
+  };
+
+  const checkIfImageInactive = (index: number) => {
+    if (clearedCards.includes(index)) return true;
+    else return false;
+  };
   return (
     <>
-      <p>Here is my galley calling for cards</p>
-      <div className={styles.gallery}>
-        {cards.map((card) => {
-          return (
-            <div key={card.id}>
-              <Card card={card} />
-            </div>
-          );
-        })}
-      </div>
+      {cardArr ? (
+        <div className={styles.gallery}>
+          {cardArr.map((card, index) => {
+            return (
+              <Card
+                key={card.id}
+                card={card}
+                index={index}
+                imageVisible={checkIfImageVisible(index)}
+                handleClick={handleClick}
+                imageInactive={checkIfImageInactive(index)}
+              />
+            );
+          })}
+        </div>
+      ) : (
+        <></>
+      )}
     </>
   );
 }

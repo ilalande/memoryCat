@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
 import Footer from './Footer';
 import Header from './Header';
-
+// Style in App.css
 const GeneralLayout: FC<PropsWithChildren> = ({ children }): JSX.Element => {
   return (
     <>

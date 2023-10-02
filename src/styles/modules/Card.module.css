@@ -1,5 +1,48 @@
 .card {
-  border: 3px solid red;
-  min-width: 10%;
-  padding: 1rem;
+  background-color: var(--card-color);
+  border-radius: var(--card-border-radius);
+  width: 30%;
+  margin: 0.3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 1;
+}
+
+.card button {
+  background-color: transparent;
+  border-color: transparent;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-height: 150px;
+}
+
+.card button:hover {
+  border: 3px solid var(--yellow-color);
+  cursor: pointer;
+}
+
+.card button span {
+  width: 100%;
+}
+
+.card img {
+  object-fit: cover;
+  min-height: 100px;
+  width: 100%;
+  border-radius: var(--card-border-radius);
+}
+
+@media screen and (min-width: 576px) {
+  .card {
+    width: 20%;
+  }
+  .card button {
+    min-height: 250px;
+  }
+  .card img {
+    min-height: 250px;
+  }
 }
